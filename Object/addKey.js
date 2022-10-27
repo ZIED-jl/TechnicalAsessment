@@ -4,4 +4,14 @@
 var animal;
 var addKey;
 
+function addkey(obj, name ,weight) {
+    var resultat = "";
+    for (var key  in obj) {
+      if (obj.hasOwnProperty(key)) {
+          resultat += `${name}.${key} = ${obj[key]}\n`;
+      }
+    }
+    return resultat;
+  }
+
 

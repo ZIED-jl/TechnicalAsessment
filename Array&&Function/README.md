@@ -15,18 +15,26 @@
    }
 
    square(10) + 2;
+   result 102;
    square(100) + square(77);
-   square(8 / 2)
+   result 15929;
+   square(8 / 2);
+   result 16;
    square(2 + 17);
+   result 361;
    square(square(15));
+   result 50625;
    ```
 
 2. Write a sentence in plain English describing how `square(square(15))` is
    evaluated.
+   (square (15)) first on execute square (15) return 225
+   second square (225) return 50625 because js read code line by line .
 
 3. Rename `square`'s `num` parameter in your above code to `monkey`, and
    rename the uses of that parameter in the body to `monkey` as well. Will the
    function `square` still work? Why or why not?
+   function square still not work because her parameter is not difined ;
 
 4. What is wrong with the following definitions of `square`? Write a sentence or
    two describing the issue(s); then, try copying the erroneous examples into a
@@ -38,14 +46,16 @@
    function square(monkey) {
      return x * x;
    }
-
+    x is not defined ;
    function square(5) {
      return 5 * 5;
    }
+    5 is Unexpected number;
 
    function square("x") {
      return "x" * "x";
    }
+   "x" is Unexpected string;
    ```
 
 5. Fix the invalid syntax in the following functions (you can copy and paste these
@@ -55,13 +65,24 @@
    func square1(x {
      return x * x;
    }
-
+Unexpected identifier 'square1
+  func square1(x){
+    return x * x ;
+  };
    functionsquare2 x)
      return x * x;
    }
+   Unexpected identifier 'x'
+   function square2 (x){
+    return x * x ;
+   };
 
    function (x) square3 {
      return x * x;
+     Function statements require a function name
+     function square3 (x){
+      return x * x ;
+     }
    ```
 
 6. The following functions exhibit poor style -- fix these issues using the
@@ -69,13 +90,21 @@
 
    ```js
    function square(x){return x*x;}
-
+    function squae (x){
+      return x * x ;
+    }
    function square (x) { return x *x;
+   }
+   function square (x) {
+    return x * x ; 
    }
 
    function square(x)
    {
    return x * x;
+   }
+   function square (x) {
+    return x * x ;
    }
    ```
 
@@ -83,17 +112,18 @@
 
   ```js
   function cube(x) {
-    // your code here
+    return x * x ;
   }
   ```
 
 8. Complete the function `fullName` that should take two parameters, `firstName`
    and `lastName`, and returns the `firstName` and `lastName` concatenated
    together with a space in between.
-
+    
   ```js
   // don't forget the parameters!
   function fullName() {
+     return firstname + lastename ;
     // your code here
   }
   fullName("John", "Doe") // => "John Doe"
@@ -101,9 +131,15 @@
 
 9. Write a function `average` that takes two numbers as input (parameters), and
    returns the average of those numbers.
+   function average (x ,y){
+    return (x + y )/2
+   }
 
 10. Write a function `greeter` that takes a name as an argument and *greets*
     that name by returning something along the lines of `"Hello, <name>!"`
+    function greeter (name){
+      console.log("hello"+name);
+    };
 
 11. Using the document found at <a href="http://www.gbcnv.edu/documents/ASC/docs/00000005.pdf" target="_blank">this link</a>, translate the first page of geometric
     formulas into JavaScript functions.
@@ -114,6 +150,24 @@
     ```js
     function perimeterRect(l, w) {
       return 2 * (l + w);
+    }
+    function areasquare (s){
+    return s * s ;
+  }
+    function arearectangle ( l , w){
+      return l * w ;
+    }
+    function areaparallelogram(l , h){
+      return l * h ;
+    }
+    function areatrapezoid (h , b1 ,b2){
+      return 1/2 * h *(b1 + b2);
+    }
+    function areatriangle(b , h){
+      return 1/2* b *h;
+    }
+    function areacircle (r){
+      return Math.PI*(r * r);
     }
     ```
 
@@ -140,6 +194,31 @@
 ### More Practice
 
 Translate the rest of the geometric formulas found <a href="http://www.gbcnv.edu/documents/ASC/docs/00000005.pdf" target="_blank">here</a> into JavaScript functions.
+```js
+function volrectsolid(l , w ,b){
+  return l * w * h;
+}
+function volcube(s){
+  return s*s*s;
+}
+function volrigthcircy(r , h){
+  return math.PI*(r*r)*h;
+}
+function volsphere(r){
+  return 3/4*math.PI*(r*r*r);
+};
+function volrigthcircone(r, h){
+  return 1/3*math.PI*(r*r)*h;
+}
+ function volpyramid(l , w ,h){
+ return 1/3* l * w * h;
+ }
+ function volfurstum(r,R,h){
+  return math.PI*((r*r)+r*R+(R+R)*h)/3
+ }
+  ```
+
+
 
 ### Advanced (extra practice)
 
